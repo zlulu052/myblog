@@ -1,7 +1,7 @@
 ---
 title: "我的第一篇博客：你好，世界！"
 date: 2026-01-14T00:00:00+08:00
-image: image: https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1920&auto=format&fit=crop
+image: https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1920&auto=format&fit=crop
 description: "这是我在互联网上建立的第一个小窝，用来记录我的生活和技术。"
 categories:
     - 日常
