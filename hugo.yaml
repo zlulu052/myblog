@@ -56,13 +56,7 @@ languages:
             sidebar:
                 subtitle: وصف تجريبي
 
-services:
-    # Change it to your Disqus shortname before using
-    disqus:
-        shortname: "hugo-theme-stack"
-    # GA Tracking ID
-    googleAnalytics:
-        id:
+
 
 pagination:
     pagerSize: 3
