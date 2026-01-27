@@ -1,4 +1,4 @@
-baseurl: https://example.com/
+baseurl: https://wen910bing.top/
 languageCode: en-us
 theme: hugo-theme-stack
 title: 温九拾冰的博客城堡
@@ -28,9 +28,9 @@ languages:
             sidebar:
                 subtitle: “我给你瘦落的街道、绝望的落日、荒郊的月亮。我给你一个久久地望着孤月的人的悲哀。”
                 avatar:
-                  enabled: true
-                  local: false
-                  src: "/img/avatar.jpg"
+                    enabled: true
+                    local: false
+                    src: "/img/avatar.jpg"
 
     zh-tw:
         languageName: 正體中文
@@ -42,11 +42,11 @@ languages:
 
     ja:
         languageName: 日本語
-        title: サンプルサイト
+        title: サンプルサイト
         weight: 2
         params:
             sidebar:
-                subtitle: サンプル説明
+                subtitle: サンプル説明
     ar:
         languageName: عربي
         languagedirection: rtl
@@ -55,8 +55,6 @@ languages:
         params:
             sidebar:
                 subtitle: وصف تجريبي
-
-
 
 pagination:
     pagerSize: 3
@@ -96,28 +94,13 @@ params:
             enabled: true
             default: Licensed under CC BY-NC-SA 4.0
 
-   comments:
+    comments:
         enabled: true
         provider: waline
 
         waline:
             serverURL: https://comment.wen910bing.top
             darkMode: auto
-
-        # Waline client configuration see: https://waline.js.org/en/reference/component.html
-        waline:
-            serverURL:
-            lang:
-            pageview:
-            emoji:
-                - https://unpkg.com/@waline/emojis@1.0.1/weibo
-            requiredMeta:
-                - name
-                - email
-                - url
-            locale:
-                admin: Admin
-                placeholder:
 
         twikoo:
             envId:
