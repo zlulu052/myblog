@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Hello World on 温九拾冰的博客城堡</title>
+        <link>http://localhost:1313/tags/hello-world/</link>
+        <description>Recent content in Hello World on 温九拾冰的博客城堡</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>温九拾冰</copyright>
+        <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/hello-world/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>我的第一篇博客：你好，世界！</title>
+        <link>http://localhost:1313/p/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link>
+        <pubDate>Wed, 14 Jan 2026 00:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</guid>
+        <description>&lt;img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&amp;w=1920&amp;auto=format&amp;fit=crop" alt="Featured image of post 我的第一篇博客：你好，世界！" /&gt;&lt;h2 id=&#34;-终于上线啦&#34;&gt;🎉 终于上线啦！
+&lt;/h2&gt;&lt;p&gt;经过一晚上的折腾，克服了无数个报错，我的博客终于在 &lt;strong&gt;Vercel&lt;/strong&gt; 上安家了！&lt;/p&gt;
+&lt;h3 id=&#34;这里会写什么&#34;&gt;这里会写什么？
+&lt;/h3&gt;&lt;p&gt;以后我会在这里分享：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;📸 生活中的有趣瞬间&lt;/li&gt;
+&lt;li&gt;💻 踩过的代码坑（比如今天修好的 Git 报错&amp;hellip;）&lt;/li&gt;
+&lt;li&gt;🚀 各种好玩的想法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感谢 &lt;strong&gt;Gemini&lt;/strong&gt; 陪我一起修好了这个城堡！🏰&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;既然选择了远方，便只顾风雨兼程。&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;(这是我的第一篇文章，纪念一下！)&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
