@@ -96,40 +96,13 @@ params:
             enabled: true
             default: Licensed under CC BY-NC-SA 4.0
 
-    comments:
+   comments:
         enabled: true
-        provider: disqus
+        provider: waline
 
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
-
-        utterances:
-            repo:
-            issueTerm: pathname
-            label:
-
-        beaudar:
-            repo:
-            issueTerm: pathname
-            label:
-            theme:
-
-        remark42:
-            host:
-            site:
-            locale:
-
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
+        waline:
+            serverURL: https://comment.wen910bing.top
+            darkMode: auto
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
