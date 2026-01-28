@@ -102,7 +102,7 @@ params:
       # 👇 下面这个引号里填你刚才在 Vercel 复制的那个网址
       # 注意：不要带 http:// 也不要带最后的斜杠 /，只要域名！
       # 如果你的网址是 twikoo-comments-two.vercel.app，那就填：
-      envId: "twikoo-comments-two.vercel.app"
+      envId: "http://twikoo-comments-two.vercel.app"
       region: ""
       path: ""
       lang: "zh-CN"
