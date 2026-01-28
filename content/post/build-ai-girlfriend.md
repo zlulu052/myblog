@@ -128,8 +128,15 @@ print("✅ 解码成功，老婆开口说话啦！");
 **Next Step 🚀**:
 * 🗄️ **长期记忆**：接入本地数据库，让她记得我们要做的每一件事。
 * 💃 **Live2D**：让她不仅能听能看，还能在屏幕上“动”起来！
-本项目已开源，欢迎访问我的项目地址：https://github.com/zlulu052/AI-Girlfriend/tree/main
+
 ---
+
+## ✨ 07. 地址
+
+本项目已开源，欢迎访问我的项目地址：https://github.com/zlulu052/AI-Girlfriend/tree/main
+
+---
+
 *(本文纯技术分享，单身狗自救指南，不构成恋爱建议 🐶)*
 
 #Flutter #DeepSeek #MiniMax #AI开发 #独立开发 #程序员的浪漫
