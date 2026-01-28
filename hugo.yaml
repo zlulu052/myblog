@@ -94,19 +94,18 @@ params:
             enabled: true
             default: Licensed under CC BY-NC-SA 4.0
 
-    comments:
-        enabled: true
-        provider: waline
+   comments:
+    enabled: true
+    provider: twikoo
 
-        waline:
-            serverURL: https://comment.wen910bing.top
-            darkMode: auto
-
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
+    twikoo:
+      # 👇 下面这个引号里填你刚才在 Vercel 复制的那个网址
+      # 注意：不要带 http:// 也不要带最后的斜杠 /，只要域名！
+      # 如果你的网址是 twikoo-comments-two.vercel.app，那就填：
+      envId: "twikoo-comments-two.vercel.app"
+      region: ""
+      path: ""
+      lang: "zh-CN"
 
         # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
         cactus:
