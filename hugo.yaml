@@ -33,7 +33,7 @@ languages:
           src: "/img/avatar.jpg"
 
 pagination:
-  pagerSize: 3
+  pagerSize: 20
 
 permalinks:
   post: /p/:slug/
