@@ -25,7 +25,7 @@ languages:
         subtitle: Example description
         avatar:
           enabled: true
-          local: false
+          local: true
           src: "/img/avatar.jpg"
   zh-tw:
     languageName: 正體中文
