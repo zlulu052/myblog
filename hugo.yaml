@@ -18,7 +18,7 @@ languages:
         # ✅ 修正重点 1：在这里精准添加头像配置
         avatar:
           enabled: true
-          local: true
+          local: false
           src: "/img/avatar.jpg" # 确保路径开头有斜杠，后缀是 .jpg
   en:
     languageName: English
@@ -29,7 +29,7 @@ languages:
         subtitle: Example description
         avatar:
           enabled: true
-          local: true
+          local: false
           src: "/img/avatar.jpg"
 
 pagination:
@@ -49,7 +49,7 @@ params:
     emoji: 🍥
     avatar:
       enabled: true
-      local: true
+      local: false
       src: "/img/avatar.jpg" # 修正全局路径
 
   article:
