@@ -5,7 +5,7 @@ date: 2026-03-07T10:00:00+08:00
 draft: false
 categories: ["AI实战", "生产力工具"]
 tags: ["OpenClaw", "Claude", "Kimi", "401报错", "Node.js"]
-image: "/img/banner.png"  # <--- 确保与 static 文件夹后的实际路径一字不差
+image: "/img/banner.png"
 ---
 
 ![OpenClaw 401 报错终极解决方案](images/banner.png)
