@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/mytrip.md",
+                "file": "post/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mytrip"
+              "title": "未命名"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/mytrip.md",
+                "file": "post/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "mytrip 的反向链接列表"
+              "title": "未命名 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/mytrip.md",
+                "file": "post/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "mytrip 的出链列表"
+              "title": "未命名 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/mytrip.md",
+                "file": "post/未命名.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "mytrip 的大纲"
+              "title": "未命名 的大纲"
             }
           },
           {
@@ -197,10 +197,11 @@
   },
   "active": "7f8c1d6bae4c3291",
   "lastOpenFiles": [
+    "post/mytrip.md",
+    "post/未命名.md",
     "assets/img/1253 1.jpg",
     "assets/img/1253.jpg",
     "模版库/文章模板.md",
-    "post/mytrip.md",
     "post/文章模板.md",
     "post/文章模版.md.md",
     "未命名.md",
