@@ -1,16 +1,14 @@
 ---
-title: "我的第一次旅行：完美封面测试篇"
-description: "这是一篇用来彻底测试首页封面图和侧边栏是否正常的文章。"
+title: 我的第一次旅行：完美封面测试篇
+description: 这是一篇用来彻底测试首页封面图和侧边栏是否正常的文章。
 date: 2026-03-08
 draft: false
-# 👈 修正重点：这里的路径和文件名必须和实际图片（perfect-cover.png）完美对上
-# 因为我们在第一步把 perfect-cover.png 存进了 assets/img 文件夹
-image: "img/perfect-cover.png" # 👈 这个路径和文件名必须和实际文件完美对上
+image: img：/img/perfect-cover.png
 categories:
-    - "生活记录"
+  - 生活记录
 tags:
-    - "测试"
-    - "Hugo"
+  - 测试
+  - Hugo
 ---
 
 # <span style="color: #ff4d4f;">🚀 开启自动配图的超级测试！</span>
@@ -26,7 +24,7 @@ tags:
 
 我们在正文中也插一张图，测试它是否能和封面图完美配合。
 
-![](assets/img/perfect-cover.png)
+![](/img/perfect-cover.png)
 
 （👈 这里我们直接引用了封面图做测试。如果你设置了附件路径，把这里的路径改成你正文里图片的真实名字即可）
 
