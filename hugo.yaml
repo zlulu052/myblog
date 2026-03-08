@@ -115,8 +115,3 @@ menu:
       url: https://github.com/zlulu052 # 已经替换为你的 GitHub 地址
       params:
         icon: brand-github
-    - identifier: mail
-      name: 邮箱
-      url: mailto:your-email@example.com # 记得改成你自己的邮箱
-      params:
-        icon: mail
