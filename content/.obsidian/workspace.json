@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "df63c915d896769e",
+            "id": "1701c356d417559a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "文章模版.md/模板.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "模板"
             }
           }
         ]
@@ -91,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "文章模版.md/模板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "模板 的反向链接列表"
             }
           },
           {
@@ -109,11 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "文章模版.md/模板.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "模板 的出链列表"
             }
           },
           {
@@ -151,12 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "文章模版.md/模板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "模板 的大纲"
             }
           },
           {
@@ -189,8 +196,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "df63c915d896769e",
+  "active": "1701c356d417559a",
   "lastOpenFiles": [
+    "文章模版.md",
+    "文章模版.md/模板.md",
+    "未命名 1.md",
     "未命名.md",
     "post/未命名.md",
     "assets/img/79dd0a0414b781198ad1af33b80aaa97.jpg",
