@@ -15,11 +15,10 @@ languages:
     params:
       sidebar:
         subtitle: “我给你瘦落的街道、绝望的落日、荒郊的月亮。我给你一个久久地望着孤月的人的悲哀。”
-        # ✅ 修正重点 1：在这里精准添加头像配置
         avatar:
           enabled: true
           local: false
-          src: "/img/avatar.jpg" # 确保路径开头有斜杠，后缀是 .jpg
+          src: "/img/avatar.jpg"
   en:
     languageName: English
     title: Example Site
@@ -42,15 +41,15 @@ permalinks:
 params:
   mainSections:
     - post
-  featuredImageField: image # ✅ 修正重点 2：确保文章封面引用的是这个字段
+  featuredImageField: image
   rssFullContent: true
 
   sidebar:
-    emoji: 🍥
+    emoji: 🏯 # 换成了更契合你主题的“城堡”图标
     avatar:
       enabled: true
       local: false
-      src: "/img/avatar.jpg" # 修正全局路径
+      src: "/img/avatar.jpg"
 
   article:
     math: false
@@ -63,4 +62,61 @@ params:
     content:
       enabled: true
 
-# ... 后面的评论系统等配置保持不变即可
+  # --- 评论系统配置开始 ---
+  comments:
+    enabled: true
+    provider: twikoo
+    twikoo:
+      envId: "https://twikoo-comments-two.vercel.app"
+      lang: "zh-CN"
+  # --- 评论系统配置结束 ---
+
+# 👇 重点修改区域：干净清爽的侧边栏菜单与社交图标
+menu:
+  main:
+    - identifier: home
+      name: 主页
+      url: /
+      params:
+        icon: home
+      weight: 1
+
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      params:
+        icon: archives
+      weight: 2
+
+    - identifier: search
+      name: 搜索
+      url: /search/
+      params:
+        icon: search
+      weight: 3
+
+    - identifier: about
+      name: 关于
+      url: /about/
+      params:
+        icon: user
+      weight: 4
+
+    - identifier: links
+      name: 友链
+      url: /links/
+      params:
+        icon: link
+      weight: 5
+
+  social:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/zlulu052 # 已经替换为你的 GitHub 地址
+      params:
+        icon: brand-github
+    - identifier: mail
+      name: 邮箱
+      url: mailto:your-email@example.com # 记得改成你自己的邮箱
+      params:
+        icon: mail
