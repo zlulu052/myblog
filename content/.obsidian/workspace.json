@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/perfect-post.zh-cn.md.md",
+                "file": "post/index.zh-cn.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "perfect-post.zh-cn.md"
+              "title": "index.zh-cn.md"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/perfect-post.zh-cn.md.md",
+                "file": "post/index.zh-cn.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "perfect-post.zh-cn.md 的反向链接列表"
+              "title": "index.zh-cn.md 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/perfect-post.zh-cn.md.md",
+                "file": "post/index.zh-cn.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "perfect-post.zh-cn.md 的出链列表"
+              "title": "index.zh-cn.md 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/perfect-post.zh-cn.md.md",
+                "file": "post/index.zh-cn.md.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "perfect-post.zh-cn.md 的大纲"
+              "title": "index.zh-cn.md 的大纲"
             }
           },
           {
@@ -197,6 +197,13 @@
   },
   "active": "7f8c1d6bae4c3291",
   "lastOpenFiles": [
+    "post/my-test/index.zh-cn.md",
+    "模版库/文章模板.md",
+    "post/index.zh-cn.md.md",
+    "post/my-test/perfect-cover.png",
+    "post/my-test/perfect-post.zh-cn.md",
+    "post/perfect-post.zh-cn.md.md",
+    "post/perfect-post.zh-cn.md",
     "post/my-test",
     "post/my test",
     "post/新建文件夹",
@@ -205,10 +212,8 @@
     "assets",
     "assets/img/未确认 784568.crdownload",
     "post/mytrip.md",
-    "post/perfect-post.zh-cn.md.md",
     "assets/img/1253 1.jpg",
     "assets/img/1253.jpg",
-    "模版库/文章模板.md",
     "post/文章模板.md",
     "post/文章模版.md.md",
     "未命名.md",
