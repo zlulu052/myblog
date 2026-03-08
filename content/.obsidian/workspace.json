@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/index.zh-cn.md.md",
+                "file": "模版库/文章模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index.zh-cn.md"
+              "title": "文章模板"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/index.zh-cn.md.md",
+                "file": "模版库/文章模板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "index.zh-cn.md 的反向链接列表"
+              "title": "文章模板 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/index.zh-cn.md.md",
+                "file": "模版库/文章模板.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "index.zh-cn.md 的出链列表"
+              "title": "文章模板 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/index.zh-cn.md.md",
+                "file": "模版库/文章模板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index.zh-cn.md 的大纲"
+              "title": "文章模板 的大纲"
             }
           },
           {
@@ -197,9 +197,9 @@
   },
   "active": "7f8c1d6bae4c3291",
   "lastOpenFiles": [
+    "post/index.zh-cn.md.md",
     "post/my-test/index.zh-cn.md",
     "模版库/文章模板.md",
-    "post/index.zh-cn.md.md",
     "post/my-test/perfect-cover.png",
     "post/my-test/perfect-post.zh-cn.md",
     "post/perfect-post.zh-cn.md.md",
