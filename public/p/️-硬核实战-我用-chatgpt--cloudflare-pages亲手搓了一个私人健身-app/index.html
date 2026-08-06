@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="没有服务器、没有后端、不会写代码？我把热身、居家哑铃计划、饮食菜谱和训练记录做成了一个可安装、可离线的 PWA，并绑定到了自己的二级域名。">
+<title>🏋️ 硬核实战 | 我用 ChatGPT &#43; Cloudflare Pages，亲手搓了一个私人健身 App</title>
+
+<link rel='canonical' href='http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/'>
+
+<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="🏋️ 硬核实战 | 我用 ChatGPT + Cloudflare Pages，亲手搓了一个私人健身 App">
+<meta property='og:description' content="没有服务器、没有后端、不会写代码？我把热身、居家哑铃计划、饮食菜谱和训练记录做成了一个可安装、可离线的 PWA，并绑定到了自己的二级域名。">
+<meta property='og:url' content='http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/'>
+<meta property='og:site_name' content='温九拾冰的博客城堡'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ChatGPT' /><meta property='article:tag' content='Cloudflare Pages' /><meta property='article:tag' content='PWA' /><meta property='article:tag' content='独立开发' /><meta property='article:tag' content='健身' /><meta property='article:published_time' content='2026-08-06T20:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-08-06T20:00:00&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/cover.png' />
+<meta name="twitter:title" content="🏋️ 硬核实战 | 我用 ChatGPT + Cloudflare Pages，亲手搓了一个私人健身 App">
+<meta name="twitter:description" content="没有服务器、没有后端、不会写代码？我把热身、居家哑铃计划、饮食菜谱和训练记录做成了一个可安装、可离线的 PWA，并绑定到了自己的二级域名。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/cover.png' /><script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TM2ZLMXN1H');
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/img/avatar.jpg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">🏯</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">温九拾冰的博客城堡</a></h1>
+            <h2 class="site-description">“我给你瘦落的街道、绝望的落日、荒郊的月亮。我给你一个久久地望着孤月的人的悲哀。”</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zlulu052'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/">
+                <img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/cover_hu_802dd985b75553b2.png"
+                        srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/cover_hu_802dd985b75553b2.png 800w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/cover_hu_f2ba8bcab6cf7607.png 1600w"
+                        width="800" 
+                        height="533" 
+                        loading="lazy"
+                        alt="Featured image of post 🏋️ 硬核实战 | 我用 ChatGPT &#43; Cloudflare Pages，亲手搓了一个私人健身 App" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E6%88%98/" >
+                技术实战
+            </a>
+        
+            <a href="/categories/ai%E5%AE%9E%E6%88%98/" >
+                AI实战
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/">🏋️ 硬核实战 | 我用 ChatGPT &#43; Cloudflare Pages，亲手搓了一个私人健身 App</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            没有服务器、没有后端、不会写代码？我把热身、居家哑铃计划、饮食菜谱和训练记录做成了一个可安装、可离线的 PWA，并绑定到了自己的二级域名。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-08-06T20:00:00&#43;08:00'>Aug 06, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="-硬核实战-我用-chatgpt--cloudflare-pages亲手搓了一个私人健身-app">🏋️ [硬核实战] 我用 ChatGPT + Cloudflare Pages，亲手搓了一个私人健身 App
+</h1><blockquote>
+<p>📢 <strong>前言：</strong> 一开始，我只是想让 AI 帮我安排一份居家哑铃训练和减脂饮食计划。</p>
+<p>结果聊着聊着，训练计划变成了电子手册，电子手册又变成了离线网页，最后我干脆把它部署到了自己的二级域名：</p>
+<p><strong><a class="link" href="https://fitness.wen910bing.top"  target="_blank" rel="noopener"
+    >https://fitness.wen910bing.top</a></strong></p>
+<p>它不是什么商业项目，也没有复杂后台，但它真的能装进手机、记录数据、离线打开，而且完全按照我的身体情况和训练习惯定制。</p>
+</blockquote>
+<hr>
+<h2 id="-01-为什么要自己造一个健身-app">🌈 01. 为什么要自己造一个健身 App？
+</h2><p>市面上的健身软件很多，但我真正需要的东西其实非常简单：</p>
+<ol>
+<li>🏋️ <strong>今天该练什么</strong>：按“推、拉、腿肩核心、休息”循环。</li>
+<li>🔥 <strong>训练前怎么热身</strong>：不用每次翻聊天记录。</li>
+<li>🍱 <strong>今天吃什么</strong>：食材克数、具体做法、训练前后怎么吃。</li>
+<li>✍️ <strong>记录训练数据</strong>：重量、组数、次数、体重、腰围和睡眠。</li>
+<li>📈 <strong>过一段时间能回看</strong>：知道自己有没有进步，而不是凭感觉。</li>
+<li>📱 <strong>手机上好操作</strong>：打开就用，不想安装一个又大又复杂的软件。</li>
+</ol>
+<p>我的目标不是做一个“功能最多”的 App，而是做一个<strong>我真的愿意每天打开的工具</strong>。</p>
+<hr>
+<h2 id="-02-先把需求喂给-ai">🧠 02. 先把需求喂给 AI
+</h2><p>整个项目最关键的一步，不是写代码，而是先把需求一点点讲清楚。</p>
+<p>最初的条件是：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>我的情况</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>身高 / 体重</td>
+          <td>172cm / 72kg</td>
+      </tr>
+      <tr>
+          <td>训练经验</td>
+          <td>健身小白</td>
+      </tr>
+      <tr>
+          <td>训练场景</td>
+          <td>居家</td>
+      </tr>
+      <tr>
+          <td>器械</td>
+          <td>可调哑铃 + 哑铃凳</td>
+      </tr>
+      <tr>
+          <td>目标</td>
+          <td>减少腹部赘肉、增加全身肌肉线条</td>
+      </tr>
+      <tr>
+          <td>训练节奏</td>
+          <td>练三休一</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>经过几轮调整，最终训练框架稳定为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Day 1：推日（胸 + 肱三头肌）
+</span></span><span style="display:flex;"><span>Day 2：拉日（背 + 肱二头肌）
+</span></span><span style="display:flex;"><span>Day 3：腿 + 肩 + 核心
+</span></span><span style="display:flex;"><span>Day 4：休息
+</span></span></code></pre></div><p>饮食则控制在：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>每日热量：1900–2100 kcal
+</span></span><span style="display:flex;"><span>每日蛋白质：130–150g
+</span></span><span style="display:flex;"><span>饮水：2.5–3L
+</span></span></code></pre></div><p>然后我继续提出新需求：</p>
+<blockquote>
+<p>“把热身、训练计划、饮食都做进离线系统里供我查看。”</p>
+</blockquote>
+<p>从这一句话开始，它不再只是一份计划，而是逐渐变成了一个产品。</p>
+<hr>
+<h2 id="-03-它最终能做什么">🛠️ 03. 它最终能做什么？
+</h2><p>目前的 LEO Fitness 包含五个核心页面：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>页面</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>首页</td>
+          <td>显示今日建议训练和近 7 天概览</td>
+      </tr>
+      <tr>
+          <td>训练</td>
+          <td>查看推、拉、腿肩核心热身与正式计划</td>
+      </tr>
+      <tr>
+          <td>饮食</td>
+          <td>极简早餐、一周菜谱、食材克数与做法</td>
+      </tr>
+      <tr>
+          <td>记录</td>
+          <td>填写体重、腰围、饮食、训练、睡眠</td>
+      </tr>
+      <tr>
+          <td>分析</td>
+          <td>查看趋势、训练次数、蛋白达标率与建议</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>最让我满意的不是页面有多炫，而是所有内容都来自我自己的计划。</p>
+<p>它不是一个通用模板，而是一个真正围绕我设计的小工具。</p>
+<hr>
+<h2 id="-04-技术架构没有服务器也能跑起来">🏗️ 04. 技术架构：没有服务器，也能跑起来
+</h2><p>这个版本采用的是非常轻量的静态 PWA 架构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>HTML + CSS + JavaScript
+</span></span><span style="display:flex;"><span>        │
+</span></span><span style="display:flex;"><span>        ├── manifest.json       负责“添加到主屏幕”
+</span></span><span style="display:flex;"><span>        ├── service-worker.js   负责离线缓存
+</span></span><span style="display:flex;"><span>        └── localStorage        保存个人记录
+</span></span></code></pre></div><p>项目文件只有几个：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>LEO_Fitness_V3/
+</span></span><span style="display:flex;"><span>├── index.html
+</span></span><span style="display:flex;"><span>├── manifest.json
+</span></span><span style="display:flex;"><span>├── service-worker.js
+</span></span><span style="display:flex;"><span>├── icon.svg
+</span></span><span style="display:flex;"><span>└── README.txt
+</span></span></code></pre></div><p>这里没有传统意义上的服务器和数据库。</p>
+<p>每个人填写的数据，会保存在自己设备、自己浏览器的 <code>localStorage</code> 中。</p>
+<p>这也意味着：</p>
+<ul>
+<li>我的朋友打开同一个网址，不会看到我的记录；</li>
+<li>朋友的数据不会污染我的数据；</li>
+<li>换手机不会自动同步；</li>
+<li>清除浏览器网站数据，记录可能会丢失；</li>
+<li>因此系统加入了 JSON 导出和导入备份。</li>
+</ul>
+<p>对于一个个人工具来说，这个方案足够轻、足够省钱，也足够隐私。</p>
+<hr>
+<h2 id="-05-部署到-cloudflare-pages">☁️ 05. 部署到 Cloudflare Pages
+</h2><p>代码准备好之后，接下来就是把它变成一个真正能访问的网站。</p>
+<p>我使用的是 <strong>Cloudflare Pages</strong>。</p>
+<p>首先进入 Cloudflare 后台，在左侧找到：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Compute
+</span></span><span style="display:flex;"><span>└── Workers &amp; Pages
+</span></span></code></pre></div><p><img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/02-workers-pages.png"
+	width="2526"
+	height="1202"
+	srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/02-workers-pages_hu_49500a8733ebc8e3.png 480w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/02-workers-pages_hu_2c43c7907a314d19.png 1024w"
+	loading="lazy"
+	
+		alt="进入 Workers & Pages"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="210"
+		data-flex-basis="504px"
+	
+></p>
+<p>点击右上角创建应用后，新版 Cloudflare 会优先展示 Worker。</p>
+<p>这时候要找到页面下方的 Pages 入口，或者选择上传静态文件。</p>
+<p><img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/03-create-pages.png"
+	width="2456"
+	height="1299"
+	srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/03-create-pages_hu_8f992386f6d6947e.png 480w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/03-create-pages_hu_b45ba1c813d5e5b8.png 1024w"
+	loading="lazy"
+	
+		alt="创建 Pages 项目"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="189"
+		data-flex-basis="453px"
+	
+></p>
+<p>把项目压缩包解压，确保 <code>index.html</code> 位于上传目录最外层，然后上传：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>index.html
+</span></span><span style="display:flex;"><span>manifest.json
+</span></span><span style="display:flex;"><span>service-worker.js
+</span></span><span style="display:flex;"><span>icon.svg
+</span></span></code></pre></div><p>部署成功后，Cloudflare 会生成一个临时地址，例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://leo-fitness-5tj.pages.dev
+</span></span></code></pre></div><p><img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/04-deploy-success.png"
+	width="2048"
+	height="1053"
+	srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/04-deploy-success_hu_6f029b8b51a2fea7.png 480w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/04-deploy-success_hu_f3a38ee18ce4273e.png 1024w"
+	loading="lazy"
+	
+		alt="部署成功"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="466px"
+	
+></p>
+<p>到这里，一个完全免费的 HTTPS 健身网站就已经可以打开了。</p>
+<hr>
+<h2 id="-06-绑定自己的二级域名">🌐 06. 绑定自己的二级域名
+</h2><p>我原来的博客地址是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://www.wen910bing.top
+</span></span></code></pre></div><p>为了不影响博客，我给健身系统单独使用一个二级域名：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://fitness.wen910bing.top
+</span></span></code></pre></div><p>项目结构变成：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>www.wen910bing.top       → Vercel 上的 Hugo 博客
+</span></span><span style="display:flex;"><span>fitness.wen910bing.top   → Cloudflare Pages 健身系统
+</span></span></code></pre></div><p>在 Cloudflare 项目中进入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Custom domains
+</span></span><span style="display:flex;"><span>→ Set up a custom domain
+</span></span></code></pre></div><p><img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/05-custom-domain.png"
+	width="2048"
+	height="1038"
+	srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/05-custom-domain_hu_ab0b069c027b7014.png 480w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/05-custom-domain_hu_1b1d6372171ffd3c.png 1024w"
+	loading="lazy"
+	
+		alt="Cloudflare 自定义域名"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="197"
+		data-flex-basis="473px"
+	
+></p>
+<p>因为我的 DNS 在腾讯云 DNSPod，所以选择：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>My DNS provider
+</span></span><span style="display:flex;"><span>→ Begin CNAME setup
+</span></span></code></pre></div><p><img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/06-cname-method.png"
+	width="2047"
+	height="998"
+	srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/06-cname-method_hu_f5f97eed540a4b0e.png 480w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/06-cname-method_hu_e1c5e1d705ac8496.png 1024w"
+	loading="lazy"
+	
+		alt="选择外部 DNS 服务商"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="205"
+		data-flex-basis="492px"
+	
+></p>
+<p>然后进入腾讯云 DNSPod，新增一条 CNAME：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>配置项</th>
+          <th>内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>主机记录</td>
+          <td><code>fitness</code></td>
+      </tr>
+      <tr>
+          <td>记录类型</td>
+          <td><code>CNAME</code></td>
+      </tr>
+      <tr>
+          <td>线路类型</td>
+          <td>默认</td>
+      </tr>
+      <tr>
+          <td>记录值</td>
+          <td><code>leo-fitness-5tj.pages.dev</code></td>
+      </tr>
+      <tr>
+          <td>TTL</td>
+          <td>600 或默认</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><img src="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/07-dnspod-cname.png"
+	width="2048"
+	height="959"
+	srcset="/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/07-dnspod-cname_hu_9564cc6c73e1ad54.png 480w, /p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/07-dnspod-cname_hu_bba5b4b1fcab8132.png 1024w"
+	loading="lazy"
+	
+		alt="腾讯云 DNSPod 添加 CNAME"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="213"
+		data-flex-basis="512px"
+	
+></p>
+<p>等待解析和 HTTPS 证书生效后，正式地址就可以访问了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://fitness.wen910bing.top
+</span></span></code></pre></div><hr>
+<h2 id="-07-把网页安装成手机-app">📲 07. 把网页安装成手机 App
+</h2><p>PWA 最有意思的地方，就是它明明是网页，却可以像 App 一样出现在桌面。</p>
+<h3 id="iphone">iPhone
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Safari 打开网站
+</span></span><span style="display:flex;"><span>→ 分享
+</span></span><span style="display:flex;"><span>→ 添加到主屏幕
+</span></span><span style="display:flex;"><span>→ 添加
+</span></span></code></pre></div><h3 id="android">Android
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Chrome 打开网站
+</span></span><span style="display:flex;"><span>→ 右上角菜单
+</span></span><span style="display:flex;"><span>→ 安装应用 / 添加到主屏幕
+</span></span></code></pre></div><p>安装后，桌面会出现独立图标。</p>
+<p>再次打开时，没有普通网页那种明显的地址栏，使用体验更像一个轻量 App。</p>
+<hr>
+<h2 id="-08-朋友使用会不会把我的数据搞乱">🔐 08. 朋友使用，会不会把我的数据搞乱？
+</h2><p>不会。</p>
+<p>目前程序和数据是分开的：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>网站程序：所有访问者共用
+</span></span><span style="display:flex;"><span>个人记录：各自保存在各自浏览器
+</span></span></code></pre></div><p>例如：</p>
+<ul>
+<li>我在自己的手机记录 72kg；</li>
+<li>朋友在他的手机记录 80kg；</li>
+<li>两个人虽然访问同一个网址，但数据彼此独立。</li>
+</ul>
+<p>只有在同一台设备、同一个浏览器用户环境中使用，才可能看到同一份本地记录。</p>
+<p>这是一种很适合个人小工具的隔离方式。</p>
+<hr>
+<h2 id="-09-我踩过的几个坑">👿 09. 我踩过的几个坑
+</h2><h3 id="-坑一临时域名和正式域名的数据不互通">🛑 坑一：临时域名和正式域名的数据不互通
+</h3><p><code>pages.dev</code> 和 <code>fitness.wen910bing.top</code> 是两个不同的网站来源。</p>
+<p>因为数据保存在浏览器本地，所以在临时地址填写的记录，不会自动出现在正式域名中。</p>
+<p>正式使用前，最好先把自定义域名绑定完成。</p>
+<h3 id="-坑二本地数据不是云同步">🛑 坑二：本地数据不是云同步
+</h3><p><code>localStorage</code> 很方便，但它不是数据库。</p>
+<p>清缓存、换手机或换浏览器前，要记得导出备份。</p>
+<hr>
+<h2 id="-10-从一句需求到一个真正能用的产品">🎉 10. 从一句需求，到一个真正能用的产品
+</h2><p>这次最有意思的地方，不是我写出了多少代码，而是整个过程几乎都是从自然语言开始的。</p>
+<p>我只是在不断告诉 AI：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>我有什么器械
+</span></span><span style="display:flex;"><span>我想练成什么样
+</span></span><span style="display:flex;"><span>我每天怎么吃
+</span></span><span style="display:flex;"><span>我希望系统记录什么
+</span></span><span style="display:flex;"><span>手机上哪里不好用
+</span></span><span style="display:flex;"><span>部署过程中卡在了哪一步
+</span></span></code></pre></div><p>AI 根据我的反馈不断调整：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>训练计划
+</span></span><span style="display:flex;"><span>→ 饮食手册
+</span></span><span style="display:flex;"><span>→ 离线记录网页
+</span></span><span style="display:flex;"><span>→ 手机版底部导航
+</span></span><span style="display:flex;"><span>→ PWA
+</span></span><span style="display:flex;"><span>→ Cloudflare 部署
+</span></span><span style="display:flex;"><span>→ 自定义域名
+</span></span></code></pre></div><p>它没有替我“一键完成所有事情”。</p>
+<p>但它像一个随叫随到的产品经理、程序员和部署助手，把一个模糊的念头，逐步变成了一个可以真正使用的工具。</p>
+<hr>
+<h2 id="-next-step把它升级成真正的私人教练">🚀 Next Step：把它升级成真正的私人教练
+</h2><p>目前这个版本已经够我自己记录和回看，但下一步我还想加入：</p>
+<ul>
+<li>🗄️ 登录账号与云端同步；</li>
+<li>📊 自动生成周报和月报；</li>
+<li>🏋️ 每个动作单独记录重量和次数；</li>
+<li>⬆️ 自动判断下次是否该增加哑铃重量；</li>
+<li>🍱 一键生成每周采购清单；</li>
+<li>📷 体型照片时间轴；</li>
+<li>🤖 根据体重、腰围、睡眠和力量表现给出调整建议。</li>
+</ul>
+<p>现在它只是一个轻量健身记录器。</p>
+<p>但只要继续迭代，它完全可以变成一个真正属于我的 AI 私人教练。</p>
+<hr>
+<h2 id="-11-项目地址">✨ 11. 项目地址
+</h2><p>LEO Fitness：</p>
+<p><strong><a class="link" href="https://fitness.wen910bing.top"  target="_blank" rel="noopener"
+    >https://fitness.wen910bing.top</a></strong></p>
+<p>我的博客：</p>
+<p><strong><a class="link" href="https://www.wen910bing.top"  target="_blank" rel="noopener"
+    >https://www.wen910bing.top</a></strong></p>
+<hr>
+<blockquote>
+<p>代码只是工具，真正重要的是：你能不能把一个“我想要”的念头，持续拆成一个又一个可以完成的小步骤。</p>
+</blockquote>
+<p>#ChatGPT #CloudflarePages #PWA #独立开发 #个人网站 #健身打卡</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/chatgpt/">ChatGPT</a>
+        
+            <a href="/tags/cloudflare-pages/">Cloudflare Pages</a>
+        
+            <a href="/tags/pwa/">PWA</a>
+        
+            <a href="/tags/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/">独立开发</a>
+        
+            <a href="/tags/%E5%81%A5%E8%BA%AB/">健身</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: 'https:\/\/twikoo-comments-two.vercel.app',
+        el: '#tcomment',lang: 'zh-CN',})
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 温九拾冰
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.0cf9f9e40af37c6240c2d02f9b945bff2e17ec970a1e8a103128100ab55803dd.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

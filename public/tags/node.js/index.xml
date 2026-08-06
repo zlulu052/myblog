@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Node.js on 温九拾冰的博客城堡</title>
+        <link>http://localhost:1313/tags/node.js/</link>
+        <description>Recent content in Node.js on 温九拾冰的博客城堡</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>温九拾冰</copyright>
+        <lastBuildDate>Sat, 07 Mar 2026 10:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/node.js/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw &#43; Claude Code 深度部署全攻略</title>
+        <link>http://localhost:1313/p/%E6%8B%92%E7%BB%9D-401-%E6%8A%A5%E9%94%99%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E7%AB%8B-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%86%9B%E5%9B%A2openclaw--claude-code-%E6%B7%B1%E5%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A8%E6%94%BB%E7%95%A5/</link>
+        <pubDate>Sat, 07 Mar 2026 10:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E6%8B%92%E7%BB%9D-401-%E6%8A%A5%E9%94%99%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E7%AB%8B-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%86%9B%E5%9B%A2openclaw--claude-code-%E6%B7%B1%E5%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A8%E6%94%BB%E7%95%A5/</guid>
+        <description>&lt;img src="http://localhost:1313/img/banner.png" alt="Featured image of post 拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw &#43; Claude Code 深度部署全攻略" /&gt;&lt;h1 id=&#34;-openclaw-401-报错终极解决方案&#34;&gt;&lt;!-- raw HTML omitted --&gt;🔥 OpenClaw 401 报错终极解决方案&lt;!-- raw HTML omitted --&gt;
+&lt;/h1&gt;&lt;p&gt;在这个 AI 爆发的 2026 年，如果你还在网页端手动复制粘贴对话，那简直是在原始社会徘徊！真正的极客早已开始组建自己的“AI 助理矩阵”。今天，我要带你亲手组建一支 24 小时待命、永不疲倦的“生产力军团”！&lt;/p&gt;
+&lt;h2 id=&#34;-它们是谁顶级职场分工大揭秘&#34;&gt;🎭 它们是谁？（顶级职场分工大揭秘）
+&lt;/h2&gt;&lt;p&gt;在正式开机之前，你必须理解这两位核心成员的“职场分工”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenClaw (全能管家) 🤵&lt;/strong&gt;：它是你的“CEO”和“调度指挥中心”。它负责连接全球各大模型（Kimi, DeepSeek, Claude），管理你的工作区，并为你提供联网搜索、本地文件读写等全套“生存技能”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Claude Code (顶级打工人) 🧑‍💻&lt;/strong&gt;：它是你的“卷王助理”和“首席分析师”。它驻扎在你的系统终端里，逻辑推演能力极强，专门对付硬核代码重构、复杂算法分析和长文档深度处理。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;神级协作&lt;/strong&gt;：管家负责监控情报，打工人负责把信息转化为代码或方案。这套组合拳下来，你的效率将彻底进入“自动驾驶”模式！📈🔥&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第一阶段打好神级地基nodejs--git&#34;&gt;🏗️ 第一阶段：打好神级地基（Node.js + Git）
+&lt;/h2&gt;&lt;p&gt;想让 AI 听话，地基不稳必塌！AI 工具跑不起来，99% 都是环境配置的锅。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;管理员权限是“最高通行证”&lt;/strong&gt; 🛡️：不要直接双击打开 PowerShell！请务必右键点击 Windows 开始按钮，选择 &lt;strong&gt;“终端（管理员）”&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Node.js (核心引擎)&lt;/strong&gt; 🟢：它是 AI 工具运行的空气和水。请前往官网下载 &lt;strong&gt;LTS（长期支持）版&lt;/strong&gt;，安装时 &lt;strong&gt;务必勾选 &amp;ldquo;Add to PATH&amp;rdquo;&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git (助理的手脚)&lt;/strong&gt; 🐙：Windows 11 默认通常未安装。没有 Git，Claude 没法干活，管家也拉不到 GitHub 上的神仙技能包。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;地基体检&lt;/strong&gt; ✅：在管理员窗口输入 &lt;code&gt;node -v&lt;/code&gt; 和 &lt;code&gt;git -v&lt;/code&gt;。看到版本号稳稳弹出，说明地基已打牢。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第二阶段部署全能管家openclaw-篇&#34;&gt;🏗️ 第二阶段：部署全能管家（OpenClaw 篇）
+&lt;/h2&gt;&lt;p&gt;管家不需要追求虚无缥缈的实验新版，我们要的是稳如老狗的“养老稳定版”！🧘‍♂️&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;驱魔仪式（彻底清理干扰）&lt;/strong&gt; 🧹：如果你之前安装失败过，请立刻去 &lt;code&gt;C:\Users\你的用户名\&lt;/code&gt; 下把 &lt;strong&gt;&lt;code&gt;.openclaw&lt;/code&gt;&lt;/strong&gt; 文件夹彻底删除。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;精准安装稳定版&lt;/strong&gt; 📦：在管理员窗口执行：
+&lt;code&gt;npm i -g openclaw@2026.2.19&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;上岗面谈 (Onboard)&lt;/strong&gt; 🧭：输入 &lt;code&gt;openclaw onboard&lt;/code&gt; 开始配置：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;服务商 (Provider)&lt;/strong&gt;：根据你的 API Key 选择 &lt;code&gt;Moonshot AI (Kimi)&lt;/code&gt; 或 &lt;code&gt;Anthropic&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Key&lt;/strong&gt;：必须去官网后台点击 &lt;strong&gt;蓝色图标一键复制&lt;/strong&gt;。🚨 &lt;strong&gt;严禁用鼠标手动拉选&lt;/strong&gt;，防带入空格导致 401 报错！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;技能 (Skills)&lt;/strong&gt;：建议选 &lt;code&gt;Default&lt;/code&gt;，Hooks 直接选择 &lt;code&gt;Skip for now&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第三阶段部署顶级打工人claude-code-篇&#34;&gt;🧠 第三阶段：部署顶级打工人（Claude Code 篇）
+&lt;/h2&gt;&lt;p&gt;这是让 Claude 在你的本地终端火力全开的秘密武器！🎮&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;入职报到&lt;/strong&gt; 🚀：在管理员版 PowerShell 中执行官方安装指令。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高级“黑科技”配置&lt;/strong&gt; 🇨🇳：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;安装 ccswitch&lt;/strong&gt;：一键自由切换模型的“遥控器”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接入国产心脏&lt;/strong&gt;：去 &lt;code&gt;deepsafe&lt;/code&gt; 等平台领 Key 丢进 &lt;code&gt;ccswitch&lt;/code&gt; 接入 DeepSeek。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VS Code 梦幻联动&lt;/strong&gt; 💻：安装官方 &lt;strong&gt;Claude Code 插件&lt;/strong&gt;，设置中文界面并实现免登录秒开！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第四阶段openclaw-专属-401-报错降魔录-&#34;&gt;👿 第四阶段：OpenClaw 专属 401 报错“降魔录” ⚡
+&lt;/h2&gt;&lt;p&gt;如果你在网页端看到 &lt;strong&gt;HTTP 401: Invalid Authentication&lt;/strong&gt;，别哭，那是管家和打工人“没对上暗号”。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;🚨 终极前提&lt;/strong&gt;：配置前请先 &lt;strong&gt;彻底退出&lt;/strong&gt; 所有“魔法”上网软件！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;死穴一：底层保险箱 (Vault) 锁死&lt;/strong&gt; 💣：OpenClaw 会把你填错的钥匙死死锁在系统的加密 Vault 里。改 JSON 没用，必须重新运行 &lt;code&gt;openclaw onboard&lt;/code&gt; 填入 &lt;strong&gt;正确&lt;/strong&gt; 的钥匙强制覆盖！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;死穴二：域名访问受阻 (Kimi 专属坑)&lt;/strong&gt; 🌐：默认配置里的 &lt;code&gt;.ai&lt;/code&gt; 结尾（如 &lt;code&gt;api.moonshot.ai&lt;/code&gt;）在国内极不稳定。&lt;strong&gt;破解法&lt;/strong&gt;：在 &lt;code&gt;openclaw.json&lt;/code&gt; 里手动把 &lt;code&gt;moonshot.ai&lt;/code&gt; 改成 &lt;strong&gt;&lt;code&gt;.cn&lt;/code&gt;&lt;/strong&gt;！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;死穴三：Agent (代理层) 配置不匹配&lt;/strong&gt; 🤖：
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;API 协议对齐&lt;/strong&gt;：Kimi 必须锁定为 &lt;code&gt;&amp;quot;api&amp;quot;: &amp;quot;openai-completions&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型名对齐&lt;/strong&gt;：检查 JSON 底部 &lt;code&gt;agents&lt;/code&gt; 里的 &lt;code&gt;primary&lt;/code&gt; 模型名，必须和你网关层配置的名字一字不差！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语法纠错&lt;/strong&gt;：遇到 &lt;code&gt;doctor --fix&lt;/code&gt; 无限死循环时，手动去 JSON 删掉 &lt;code&gt;auth&lt;/code&gt; 下多余的 &lt;code&gt;apiKey&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;-见证时刻&#34;&gt;🎉 见证时刻
+&lt;/h1&gt;&lt;p&gt;最后，在管理员窗口运行点火命令：
+&lt;code&gt;openclaw gateway --port 18789 --verbose&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;当网页右上角亮起绿色 &lt;strong&gt;Health OK&lt;/strong&gt; 🟢，发一句“你好”收到秒回，恭喜你，你的 AI 商业帝国正式开张！🟢🚀&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

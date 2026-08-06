@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="深度拆解如何通过 OpenClaw（全能管家）与 Claude Code（顶级打工人）的完美配合，构建一个属于你的 24 小时 AI 商业帝国。">
+<title>拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw &#43; Claude Code 深度部署全攻略</title>
+
+<link rel='canonical' href='http://localhost:1313/p/%E6%8B%92%E7%BB%9D-401-%E6%8A%A5%E9%94%99%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E7%AB%8B-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%86%9B%E5%9B%A2openclaw--claude-code-%E6%B7%B1%E5%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A8%E6%94%BB%E7%95%A5/'>
+
+<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw + Claude Code 深度部署全攻略">
+<meta property='og:description' content="深度拆解如何通过 OpenClaw（全能管家）与 Claude Code（顶级打工人）的完美配合，构建一个属于你的 24 小时 AI 商业帝国。">
+<meta property='og:url' content='http://localhost:1313/p/%E6%8B%92%E7%BB%9D-401-%E6%8A%A5%E9%94%99%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E7%AB%8B-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%86%9B%E5%9B%A2openclaw--claude-code-%E6%B7%B1%E5%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A8%E6%94%BB%E7%95%A5/'>
+<meta property='og:site_name' content='温九拾冰的博客城堡'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OpenClaw' /><meta property='article:tag' content='Claude' /><meta property='article:tag' content='Kimi' /><meta property='article:tag' content='401报错' /><meta property='article:tag' content='Node.js' /><meta property='article:published_time' content='2026-03-07T10:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-07T10:00:00&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/banner.png' />
+<meta name="twitter:title" content="拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw + Claude Code 深度部署全攻略">
+<meta name="twitter:description" content="深度拆解如何通过 OpenClaw（全能管家）与 Claude Code（顶级打工人）的完美配合，构建一个属于你的 24 小时 AI 商业帝国。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/banner.png' /><script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TM2ZLMXN1H');
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/img/avatar.jpg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">🏯</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">温九拾冰的博客城堡</a></h1>
+            <h2 class="site-description">“我给你瘦落的街道、绝望的落日、荒郊的月亮。我给你一个久久地望着孤月的人的悲哀。”</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zlulu052'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E6%8B%92%E7%BB%9D-401-%E6%8A%A5%E9%94%99%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E7%AB%8B-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%86%9B%E5%9B%A2openclaw--claude-code-%E6%B7%B1%E5%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A8%E6%94%BB%E7%95%A5/">
+                
+                    <img src="/img/banner.png" loading="lazy" alt="Featured image of post 拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw &#43; Claude Code 深度部署全攻略" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai%E5%AE%9E%E6%88%98/" >
+                AI实战
+            </a>
+        
+            <a href="/categories/%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7/" >
+                生产力工具
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%8B%92%E7%BB%9D-401-%E6%8A%A5%E9%94%99%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%BB%BA%E7%AB%8B-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%86%9B%E5%9B%A2openclaw--claude-code-%E6%B7%B1%E5%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A8%E6%94%BB%E7%95%A5/">拒绝 401 报错！手把手教你建立 AI 生产力军团：OpenClaw &#43; Claude Code 深度部署全攻略</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            深度拆解如何通过 OpenClaw（全能管家）与 Claude Code（顶级打工人）的完美配合，构建一个属于你的 24 小时 AI 商业帝国。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-03-07T10:00:00&#43;08:00'>Mar 07, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="-openclaw-401-报错终极解决方案"><!-- raw HTML omitted -->🔥 OpenClaw 401 报错终极解决方案<!-- raw HTML omitted -->
+</h1><p>在这个 AI 爆发的 2026 年，如果你还在网页端手动复制粘贴对话，那简直是在原始社会徘徊！真正的极客早已开始组建自己的“AI 助理矩阵”。今天，我要带你亲手组建一支 24 小时待命、永不疲倦的“生产力军团”！</p>
+<h2 id="-它们是谁顶级职场分工大揭秘">🎭 它们是谁？（顶级职场分工大揭秘）
+</h2><p>在正式开机之前，你必须理解这两位核心成员的“职场分工”：</p>
+<ul>
+<li><strong>OpenClaw (全能管家) 🤵</strong>：它是你的“CEO”和“调度指挥中心”。它负责连接全球各大模型（Kimi, DeepSeek, Claude），管理你的工作区，并为你提供联网搜索、本地文件读写等全套“生存技能”。</li>
+<li><strong>Claude Code (顶级打工人) 🧑‍💻</strong>：它是你的“卷王助理”和“首席分析师”。它驻扎在你的系统终端里，逻辑推演能力极强，专门对付硬核代码重构、复杂算法分析和长文档深度处理。</li>
+<li><strong>神级协作</strong>：管家负责监控情报，打工人负责把信息转化为代码或方案。这套组合拳下来，你的效率将彻底进入“自动驾驶”模式！📈🔥</li>
+</ul>
+<hr>
+<h2 id="-第一阶段打好神级地基nodejs--git">🏗️ 第一阶段：打好神级地基（Node.js + Git）
+</h2><p>想让 AI 听话，地基不稳必塌！AI 工具跑不起来，99% 都是环境配置的锅。</p>
+<ol>
+<li><strong>管理员权限是“最高通行证”</strong> 🛡️：不要直接双击打开 PowerShell！请务必右键点击 Windows 开始按钮，选择 <strong>“终端（管理员）”</strong>。</li>
+<li><strong>Node.js (核心引擎)</strong> 🟢：它是 AI 工具运行的空气和水。请前往官网下载 <strong>LTS（长期支持）版</strong>，安装时 <strong>务必勾选 &ldquo;Add to PATH&rdquo;</strong>。</li>
+<li><strong>Git (助理的手脚)</strong> 🐙：Windows 11 默认通常未安装。没有 Git，Claude 没法干活，管家也拉不到 GitHub 上的神仙技能包。</li>
+<li><strong>地基体检</strong> ✅：在管理员窗口输入 <code>node -v</code> 和 <code>git -v</code>。看到版本号稳稳弹出，说明地基已打牢。</li>
+</ol>
+<hr>
+<h2 id="-第二阶段部署全能管家openclaw-篇">🏗️ 第二阶段：部署全能管家（OpenClaw 篇）
+</h2><p>管家不需要追求虚无缥缈的实验新版，我们要的是稳如老狗的“养老稳定版”！🧘‍♂️</p>
+<ol>
+<li><strong>驱魔仪式（彻底清理干扰）</strong> 🧹：如果你之前安装失败过，请立刻去 <code>C:\Users\你的用户名\</code> 下把 <strong><code>.openclaw</code></strong> 文件夹彻底删除。</li>
+<li><strong>精准安装稳定版</strong> 📦：在管理员窗口执行：
+<code>npm i -g openclaw@2026.2.19</code></li>
+<li><strong>上岗面谈 (Onboard)</strong> 🧭：输入 <code>openclaw onboard</code> 开始配置：
+<ul>
+<li><strong>服务商 (Provider)</strong>：根据你的 API Key 选择 <code>Moonshot AI (Kimi)</code> 或 <code>Anthropic</code>。</li>
+<li><strong>API Key</strong>：必须去官网后台点击 <strong>蓝色图标一键复制</strong>。🚨 <strong>严禁用鼠标手动拉选</strong>，防带入空格导致 401 报错！</li>
+<li><strong>技能 (Skills)</strong>：建议选 <code>Default</code>，Hooks 直接选择 <code>Skip for now</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-第三阶段部署顶级打工人claude-code-篇">🧠 第三阶段：部署顶级打工人（Claude Code 篇）
+</h2><p>这是让 Claude 在你的本地终端火力全开的秘密武器！🎮</p>
+<ol>
+<li><strong>入职报到</strong> 🚀：在管理员版 PowerShell 中执行官方安装指令。</li>
+<li><strong>高级“黑科技”配置</strong> 🇨🇳：
+<ul>
+<li><strong>安装 ccswitch</strong>：一键自由切换模型的“遥控器”。</li>
+<li><strong>接入国产心脏</strong>：去 <code>deepsafe</code> 等平台领 Key 丢进 <code>ccswitch</code> 接入 DeepSeek。</li>
+</ul>
+</li>
+<li><strong>VS Code 梦幻联动</strong> 💻：安装官方 <strong>Claude Code 插件</strong>，设置中文界面并实现免登录秒开！</li>
+</ol>
+<hr>
+<h2 id="-第四阶段openclaw-专属-401-报错降魔录-">👿 第四阶段：OpenClaw 专属 401 报错“降魔录” ⚡
+</h2><p>如果你在网页端看到 <strong>HTTP 401: Invalid Authentication</strong>，别哭，那是管家和打工人“没对上暗号”。</p>
+<blockquote>
+<p><strong>🚨 终极前提</strong>：配置前请先 <strong>彻底退出</strong> 所有“魔法”上网软件！</p>
+</blockquote>
+<ul>
+<li><strong>死穴一：底层保险箱 (Vault) 锁死</strong> 💣：OpenClaw 会把你填错的钥匙死死锁在系统的加密 Vault 里。改 JSON 没用，必须重新运行 <code>openclaw onboard</code> 填入 <strong>正确</strong> 的钥匙强制覆盖！</li>
+<li><strong>死穴二：域名访问受阻 (Kimi 专属坑)</strong> 🌐：默认配置里的 <code>.ai</code> 结尾（如 <code>api.moonshot.ai</code>）在国内极不稳定。<strong>破解法</strong>：在 <code>openclaw.json</code> 里手动把 <code>moonshot.ai</code> 改成 <strong><code>.cn</code></strong>！</li>
+<li><strong>死穴三：Agent (代理层) 配置不匹配</strong> 🤖：
+<ol>
+<li><strong>API 协议对齐</strong>：Kimi 必须锁定为 <code>&quot;api&quot;: &quot;openai-completions&quot;</code>。</li>
+<li><strong>模型名对齐</strong>：检查 JSON 底部 <code>agents</code> 里的 <code>primary</code> 模型名，必须和你网关层配置的名字一字不差！</li>
+<li><strong>语法纠错</strong>：遇到 <code>doctor --fix</code> 无限死循环时，手动去 JSON 删掉 <code>auth</code> 下多余的 <code>apiKey</code>。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="-见证时刻">🎉 见证时刻
+</h1><p>最后，在管理员窗口运行点火命令：
+<code>openclaw gateway --port 18789 --verbose</code></p>
+<p>当网页右上角亮起绿色 <strong>Health OK</strong> 🟢，发一句“你好”收到秒回，恭喜你，你的 AI 商业帝国正式开张！🟢🚀</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/openclaw/">OpenClaw</a>
+        
+            <a href="/tags/claude/">Claude</a>
+        
+            <a href="/tags/kimi/">Kimi</a>
+        
+            <a href="/tags/401%E6%8A%A5%E9%94%99/">401报错</a>
+        
+            <a href="/tags/node.js/">Node.js</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: 'https:\/\/twikoo-comments-two.vercel.app',
+        el: '#tcomment',lang: 'zh-CN',})
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 温九拾冰
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.0cf9f9e40af37c6240c2d02f9b945bff2e17ec970a1e8a103128100ab55803dd.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

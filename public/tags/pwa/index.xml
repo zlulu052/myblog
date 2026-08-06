@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>PWA on 温九拾冰的博客城堡</title>
+        <link>http://localhost:1313/tags/pwa/</link>
+        <description>Recent content in PWA on 温九拾冰的博客城堡</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>温九拾冰</copyright>
+        <lastBuildDate>Thu, 06 Aug 2026 20:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pwa/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>🏋️ 硬核实战 | 我用 ChatGPT &#43; Cloudflare Pages，亲手搓了一个私人健身 App</title>
+        <link>http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/</link>
+        <pubDate>Thu, 06 Aug 2026 20:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/cover.png" alt="Featured image of post 🏋️ 硬核实战 | 我用 ChatGPT &#43; Cloudflare Pages，亲手搓了一个私人健身 App" /&gt;&lt;h1 id=&#34;-硬核实战-我用-chatgpt--cloudflare-pages亲手搓了一个私人健身-app&#34;&gt;🏋️ [硬核实战] 我用 ChatGPT + Cloudflare Pages，亲手搓了一个私人健身 App
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📢 &lt;strong&gt;前言：&lt;/strong&gt; 一开始，我只是想让 AI 帮我安排一份居家哑铃训练和减脂饮食计划。&lt;/p&gt;
+&lt;p&gt;结果聊着聊着，训练计划变成了电子手册，电子手册又变成了离线网页，最后我干脆把它部署到了自己的二级域名：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://fitness.wen910bing.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fitness.wen910bing.top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它不是什么商业项目，也没有复杂后台，但它真的能装进手机、记录数据、离线打开，而且完全按照我的身体情况和训练习惯定制。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-01-为什么要自己造一个健身-app&#34;&gt;🌈 01. 为什么要自己造一个健身 App？
+&lt;/h2&gt;&lt;p&gt;市面上的健身软件很多，但我真正需要的东西其实非常简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;🏋️ &lt;strong&gt;今天该练什么&lt;/strong&gt;：按“推、拉、腿肩核心、休息”循环。&lt;/li&gt;
+&lt;li&gt;🔥 &lt;strong&gt;训练前怎么热身&lt;/strong&gt;：不用每次翻聊天记录。&lt;/li&gt;
+&lt;li&gt;🍱 &lt;strong&gt;今天吃什么&lt;/strong&gt;：食材克数、具体做法、训练前后怎么吃。&lt;/li&gt;
+&lt;li&gt;✍️ &lt;strong&gt;记录训练数据&lt;/strong&gt;：重量、组数、次数、体重、腰围和睡眠。&lt;/li&gt;
+&lt;li&gt;📈 &lt;strong&gt;过一段时间能回看&lt;/strong&gt;：知道自己有没有进步，而不是凭感觉。&lt;/li&gt;
+&lt;li&gt;📱 &lt;strong&gt;手机上好操作&lt;/strong&gt;：打开就用，不想安装一个又大又复杂的软件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我的目标不是做一个“功能最多”的 App，而是做一个&lt;strong&gt;我真的愿意每天打开的工具&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-02-先把需求喂给-ai&#34;&gt;🧠 02. 先把需求喂给 AI
+&lt;/h2&gt;&lt;p&gt;整个项目最关键的一步，不是写代码，而是先把需求一点点讲清楚。&lt;/p&gt;
+&lt;p&gt;最初的条件是：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;项目&lt;/th&gt;
+          &lt;th&gt;我的情况&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;身高 / 体重&lt;/td&gt;
+          &lt;td&gt;172cm / 72kg&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练经验&lt;/td&gt;
+          &lt;td&gt;健身小白&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练场景&lt;/td&gt;
+          &lt;td&gt;居家&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;器械&lt;/td&gt;
+          &lt;td&gt;可调哑铃 + 哑铃凳&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;目标&lt;/td&gt;
+          &lt;td&gt;减少腹部赘肉、增加全身肌肉线条&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练节奏&lt;/td&gt;
+          &lt;td&gt;练三休一&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;经过几轮调整，最终训练框架稳定为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Day 1：推日（胸 + 肱三头肌）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Day 2：拉日（背 + 肱二头肌）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Day 3：腿 + 肩 + 核心
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Day 4：休息
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;饮食则控制在：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;每日热量：1900–2100 kcal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;每日蛋白质：130–150g
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;饮水：2.5–3L
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后我继续提出新需求：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“把热身、训练计划、饮食都做进离线系统里供我查看。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从这一句话开始，它不再只是一份计划，而是逐渐变成了一个产品。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-03-它最终能做什么&#34;&gt;🛠️ 03. 它最终能做什么？
+&lt;/h2&gt;&lt;p&gt;目前的 LEO Fitness 包含五个核心页面：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;页面&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;首页&lt;/td&gt;
+          &lt;td&gt;显示今日建议训练和近 7 天概览&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练&lt;/td&gt;
+          &lt;td&gt;查看推、拉、腿肩核心热身与正式计划&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;饮食&lt;/td&gt;
+          &lt;td&gt;极简早餐、一周菜谱、食材克数与做法&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;记录&lt;/td&gt;
+          &lt;td&gt;填写体重、腰围、饮食、训练、睡眠&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;分析&lt;/td&gt;
+          &lt;td&gt;查看趋势、训练次数、蛋白达标率与建议&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最让我满意的不是页面有多炫，而是所有内容都来自我自己的计划。&lt;/p&gt;
+&lt;p&gt;它不是一个通用模板，而是一个真正围绕我设计的小工具。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-04-技术架构没有服务器也能跑起来&#34;&gt;🏗️ 04. 技术架构：没有服务器，也能跑起来
+&lt;/h2&gt;&lt;p&gt;这个版本采用的是非常轻量的静态 PWA 架构：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HTML + CSS + JavaScript
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ├── manifest.json       负责“添加到主屏幕”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ├── service-worker.js   负责离线缓存
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └── localStorage        保存个人记录
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;项目文件只有几个：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LEO_Fitness_V3/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── index.html
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── manifest.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── service-worker.js
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── icon.svg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└── README.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里没有传统意义上的服务器和数据库。&lt;/p&gt;
+&lt;p&gt;每个人填写的数据，会保存在自己设备、自己浏览器的 &lt;code&gt;localStorage&lt;/code&gt; 中。&lt;/p&gt;
+&lt;p&gt;这也意味着：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我的朋友打开同一个网址，不会看到我的记录；&lt;/li&gt;
+&lt;li&gt;朋友的数据不会污染我的数据；&lt;/li&gt;
+&lt;li&gt;换手机不会自动同步；&lt;/li&gt;
+&lt;li&gt;清除浏览器网站数据，记录可能会丢失；&lt;/li&gt;
+&lt;li&gt;因此系统加入了 JSON 导出和导入备份。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于一个个人工具来说，这个方案足够轻、足够省钱，也足够隐私。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-05-部署到-cloudflare-pages&#34;&gt;☁️ 05. 部署到 Cloudflare Pages
+&lt;/h2&gt;&lt;p&gt;代码准备好之后，接下来就是把它变成一个真正能访问的网站。&lt;/p&gt;
+&lt;p&gt;我使用的是 &lt;strong&gt;Cloudflare Pages&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;首先进入 Cloudflare 后台，在左侧找到：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Compute
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└── Workers &amp;amp; Pages
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/02-workers-pages.png&#34;
+	width=&#34;2526&#34;
+	height=&#34;1202&#34;
+	srcset=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/02-workers-pages_hu_49500a8733ebc8e3.png 480w, http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/02-workers-pages_hu_2c43c7907a314d19.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;进入 Workers &amp; Pages&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;210&#34;
+		data-flex-basis=&#34;504px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击右上角创建应用后，新版 Cloudflare 会优先展示 Worker。&lt;/p&gt;
+&lt;p&gt;这时候要找到页面下方的 Pages 入口，或者选择上传静态文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/03-create-pages.png&#34;
+	width=&#34;2456&#34;
+	height=&#34;1299&#34;
+	srcset=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/03-create-pages_hu_8f992386f6d6947e.png 480w, http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/03-create-pages_hu_b45ba1c813d5e5b8.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;创建 Pages 项目&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;189&#34;
+		data-flex-basis=&#34;453px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;把项目压缩包解压，确保 &lt;code&gt;index.html&lt;/code&gt; 位于上传目录最外层，然后上传：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;index.html
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;manifest.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service-worker.js
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;icon.svg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;部署成功后，Cloudflare 会生成一个临时地址，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://leo-fitness-5tj.pages.dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/04-deploy-success.png&#34;
+	width=&#34;2048&#34;
+	height=&#34;1053&#34;
+	srcset=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/04-deploy-success_hu_6f029b8b51a2fea7.png 480w, http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/04-deploy-success_hu_f3a38ee18ce4273e.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;部署成功&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;194&#34;
+		data-flex-basis=&#34;466px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;到这里，一个完全免费的 HTTPS 健身网站就已经可以打开了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-06-绑定自己的二级域名&#34;&gt;🌐 06. 绑定自己的二级域名
+&lt;/h2&gt;&lt;p&gt;我原来的博客地址是：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://www.wen910bing.top
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;为了不影响博客，我给健身系统单独使用一个二级域名：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://fitness.wen910bing.top
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;项目结构变成：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;www.wen910bing.top       → Vercel 上的 Hugo 博客
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fitness.wen910bing.top   → Cloudflare Pages 健身系统
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 Cloudflare 项目中进入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Custom domains
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ Set up a custom domain
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/05-custom-domain.png&#34;
+	width=&#34;2048&#34;
+	height=&#34;1038&#34;
+	srcset=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/05-custom-domain_hu_ab0b069c027b7014.png 480w, http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/05-custom-domain_hu_1b1d6372171ffd3c.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Cloudflare 自定义域名&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;473px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;因为我的 DNS 在腾讯云 DNSPod，所以选择：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;My DNS provider
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ Begin CNAME setup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/06-cname-method.png&#34;
+	width=&#34;2047&#34;
+	height=&#34;998&#34;
+	srcset=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/06-cname-method_hu_f5f97eed540a4b0e.png 480w, http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/06-cname-method_hu_e1c5e1d705ac8496.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;选择外部 DNS 服务商&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;205&#34;
+		data-flex-basis=&#34;492px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后进入腾讯云 DNSPod，新增一条 CNAME：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;配置项&lt;/th&gt;
+          &lt;th&gt;内容&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;主机记录&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;fitness&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;记录类型&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;CNAME&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;线路类型&lt;/td&gt;
+          &lt;td&gt;默认&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;记录值&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;leo-fitness-5tj.pages.dev&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TTL&lt;/td&gt;
+          &lt;td&gt;600 或默认&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/07-dnspod-cname.png&#34;
+	width=&#34;2048&#34;
+	height=&#34;959&#34;
+	srcset=&#34;http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/07-dnspod-cname_hu_9564cc6c73e1ad54.png 480w, http://localhost:1313/p/%EF%B8%8F-%E7%A1%AC%E6%A0%B8%E5%AE%9E%E6%88%98-%E6%88%91%E7%94%A8-chatgpt--cloudflare-pages%E4%BA%B2%E6%89%8B%E6%90%93%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A7%81%E4%BA%BA%E5%81%A5%E8%BA%AB-app/07-dnspod-cname_hu_bba5b4b1fcab8132.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;腾讯云 DNSPod 添加 CNAME&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;213&#34;
+		data-flex-basis=&#34;512px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;等待解析和 HTTPS 证书生效后，正式地址就可以访问了：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://fitness.wen910bing.top
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-07-把网页安装成手机-app&#34;&gt;📲 07. 把网页安装成手机 App
+&lt;/h2&gt;&lt;p&gt;PWA 最有意思的地方，就是它明明是网页，却可以像 App 一样出现在桌面。&lt;/p&gt;
+&lt;h3 id=&#34;iphone&#34;&gt;iPhone
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Safari 打开网站
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 分享
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 添加到主屏幕
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 添加
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;android&#34;&gt;Android
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Chrome 打开网站
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 右上角菜单
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 安装应用 / 添加到主屏幕
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装后，桌面会出现独立图标。&lt;/p&gt;
+&lt;p&gt;再次打开时，没有普通网页那种明显的地址栏，使用体验更像一个轻量 App。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-08-朋友使用会不会把我的数据搞乱&#34;&gt;🔐 08. 朋友使用，会不会把我的数据搞乱？
+&lt;/h2&gt;&lt;p&gt;不会。&lt;/p&gt;
+&lt;p&gt;目前程序和数据是分开的：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;网站程序：所有访问者共用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;个人记录：各自保存在各自浏览器
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我在自己的手机记录 72kg；&lt;/li&gt;
+&lt;li&gt;朋友在他的手机记录 80kg；&lt;/li&gt;
+&lt;li&gt;两个人虽然访问同一个网址，但数据彼此独立。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;只有在同一台设备、同一个浏览器用户环境中使用，才可能看到同一份本地记录。&lt;/p&gt;
+&lt;p&gt;这是一种很适合个人小工具的隔离方式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-09-我踩过的几个坑&#34;&gt;👿 09. 我踩过的几个坑
+&lt;/h2&gt;&lt;h3 id=&#34;-坑一临时域名和正式域名的数据不互通&#34;&gt;🛑 坑一：临时域名和正式域名的数据不互通
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;pages.dev&lt;/code&gt; 和 &lt;code&gt;fitness.wen910bing.top&lt;/code&gt; 是两个不同的网站来源。&lt;/p&gt;
+&lt;p&gt;因为数据保存在浏览器本地，所以在临时地址填写的记录，不会自动出现在正式域名中。&lt;/p&gt;
+&lt;p&gt;正式使用前，最好先把自定义域名绑定完成。&lt;/p&gt;
+&lt;h3 id=&#34;-坑二本地数据不是云同步&#34;&gt;🛑 坑二：本地数据不是云同步
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;localStorage&lt;/code&gt; 很方便，但它不是数据库。&lt;/p&gt;
+&lt;p&gt;清缓存、换手机或换浏览器前，要记得导出备份。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-10-从一句需求到一个真正能用的产品&#34;&gt;🎉 10. 从一句需求，到一个真正能用的产品
+&lt;/h2&gt;&lt;p&gt;这次最有意思的地方，不是我写出了多少代码，而是整个过程几乎都是从自然语言开始的。&lt;/p&gt;
+&lt;p&gt;我只是在不断告诉 AI：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我有什么器械
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我想练成什么样
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我每天怎么吃
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我希望系统记录什么
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;手机上哪里不好用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;部署过程中卡在了哪一步
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;AI 根据我的反馈不断调整：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;训练计划
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 饮食手册
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 离线记录网页
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 手机版底部导航
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ PWA
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ Cloudflare 部署
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;→ 自定义域名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;它没有替我“一键完成所有事情”。&lt;/p&gt;
+&lt;p&gt;但它像一个随叫随到的产品经理、程序员和部署助手，把一个模糊的念头，逐步变成了一个可以真正使用的工具。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-next-step把它升级成真正的私人教练&#34;&gt;🚀 Next Step：把它升级成真正的私人教练
+&lt;/h2&gt;&lt;p&gt;目前这个版本已经够我自己记录和回看，但下一步我还想加入：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🗄️ 登录账号与云端同步；&lt;/li&gt;
+&lt;li&gt;📊 自动生成周报和月报；&lt;/li&gt;
+&lt;li&gt;🏋️ 每个动作单独记录重量和次数；&lt;/li&gt;
+&lt;li&gt;⬆️ 自动判断下次是否该增加哑铃重量；&lt;/li&gt;
+&lt;li&gt;🍱 一键生成每周采购清单；&lt;/li&gt;
+&lt;li&gt;📷 体型照片时间轴；&lt;/li&gt;
+&lt;li&gt;🤖 根据体重、腰围、睡眠和力量表现给出调整建议。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在它只是一个轻量健身记录器。&lt;/p&gt;
+&lt;p&gt;但只要继续迭代，它完全可以变成一个真正属于我的 AI 私人教练。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-11-项目地址&#34;&gt;✨ 11. 项目地址
+&lt;/h2&gt;&lt;p&gt;LEO Fitness：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://fitness.wen910bing.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fitness.wen910bing.top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我的博客：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.wen910bing.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.wen910bing.top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;代码只是工具，真正重要的是：你能不能把一个“我想要”的念头，持续拆成一个又一个可以完成的小步骤。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;#ChatGPT #CloudflarePages #PWA #独立开发 #个人网站 #健身打卡&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
